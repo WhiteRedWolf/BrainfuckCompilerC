@@ -11,22 +11,6 @@ struct Entry* AddEntry(struct Entry* head, struct Entry* insert){
     newnode->next = NULL;
 }
 
-char* reverse_string(char *str)
-{
-    char temp;
-    size_t len = strlen(str) - 1;
-    size_t stop = len/2;
-    size_t i,k;
-
-    for(i = 0, k = len; i < stop; i++, k--)
-    {
-        temp = str[k];
-        str[k] = str[i];
-        str[i] = temp;
-    }
-    return str;
-}
-
 void libbfc_compile_bf_opt(char* bfcode, int bufsize, char* output, int gcc){
     FILE* out;
 
@@ -35,9 +19,7 @@ void libbfc_compile_bf_opt(char* bfcode, int bufsize, char* output, int gcc){
     }else {
         out = fopen("out.c", "w");
     }
-
     //strrev(bfcode);
-
     //For putc() and getc()
     fprintf(out, "#include <stdio.h>\n");
 
@@ -54,8 +36,6 @@ void libbfc_compile_bf_opt(char* bfcode, int bufsize, char* output, int gcc){
 
     char OldCharacter;
     int Count = 1;
-
-    
     
     while(*bfcode){
         char c = *bfcode++;
