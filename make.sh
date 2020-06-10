@@ -1,0 +1,1 @@
+gcc main.c optcompiler.c generalcompiler.c -o build/compiler-linux
