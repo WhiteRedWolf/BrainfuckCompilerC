@@ -5,7 +5,14 @@
 #include <stdlib.h>
 
 void libbfc_compile_bf(char* bfcode, int bufsize, char* output, int gcc){
-    FILE* out = fopen(output, "w");
+    FILE* out;
+
+    if(gcc == 0){
+        out = fopen(output, "w");
+    }else {
+        out = fopen("out.c", "w");
+    }
+
 
     //For putc() and getc()
     fprintf(out, "#include <stdio.h>\n");
@@ -61,7 +68,7 @@ void libbfc_compile_bf(char* bfcode, int bufsize, char* output, int gcc){
     fclose(out);
 
     if(gcc == 1){
-        printf("\nStarting Compilation into a linux binary..");
+        printf("\nStarting Compilation into a linux binary..\n");
         char* command = malloc(64 + 16);
         sprintf(command, "gcc out.c -o %s -O3", output);
         system(command);
