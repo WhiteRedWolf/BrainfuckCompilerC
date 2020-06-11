@@ -1,4 +1,4 @@
-#include "generalcompiler.h"
+#include "../include/generalcompiler.h"
 
 #include <stdio.h>
 #include <string.h>

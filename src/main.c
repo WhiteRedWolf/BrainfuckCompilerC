@@ -3,8 +3,7 @@
 #include <assert.h>
 #include <string.h>
 
-#include "generalcompiler.h"
-#include "optcompiler.h"
+#include "include.h"
 
 char* ReadFile(char* filename){
     FILE* handle = fopen(filename, "rt");

@@ -1,4 +1,4 @@
-#include "optcompiler.h"
+#include "../include/optcompiler.h"
 
 #include <stdio.h>
 #include <stdlib.h>
